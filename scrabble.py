@@ -12,13 +12,21 @@ def permutations_result(chars):
 
 
 #file = open('words.txt', 'w')
-test_word = "test"
+test_word = "ball"
 max_length = (len(test_word) + 1)
+possible_words = []
 
+word_characters = ""
+for letter in test_word:
+    word_characters = word_characters + letter
+    if(len(word_characters) > 1):
+        words = permutations_result(word_characters)
 
-words = permutations_result(test_word)
-print(words)
+        possible_words.extend(words)
 
+print(possible_words)
+# for thing in possible_words:
+#     print(thing)
 
 # for word in distinct_list:
 #     file.write('\n'.join(word))
